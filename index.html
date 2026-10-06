@@ -19,11 +19,12 @@
   <main id="main">
     <h1>Privacy policy</h1>
     <p class="date">PokeFindHQ Comment Replies · Updated October 6, 2026</p>
-    <p>This automation runs on the PokeFindHQ and Aisle Snags Facebook and Instagram accounts. When you leave a top-level comment on one of our videos, it can send you a group invite by private message and reply to your comment. PokeFindHQ sends its Pokémon Restock Group invite; Aisle Snags sends its Dealify invite. The same data practices apply to both accounts, including a one-time catch-up for eligible comments from the preceding 12 hours.</p>
+    <p>This automation runs on the PokeFindHQ and Aisle Snags Facebook and Instagram accounts. When you comment the word requested in a video, it can send you that account's group invite by private message. Some Aisle Snags videos request a five-digit ZIP code instead. PokeFindHQ sends its Pokémon Restock Group invite; Aisle Snags sends its Dealify invite.</p>
+    <p>After Meta accepts the message, we reply to your comment to tell you to check your DMs or Message Requests. If Meta confirms that it cannot send the invite to you, we ask you to message us first. A timeout or an uncertain result does not trigger either claim. There are no automatic follow-up messages. You can also request the link by messaging the account directly; following, liking and sharing are not required.</p>
 
     <h2>Information we use</h2>
-    <p>Meta provides account, comment and post identifiers, timestamps, and information needed to check that a comment belongs to one of our videos. Its notifications may also include your username, display name and comment text.</p>
-    <p>Our automation database stores the identifiers needed to process the comment, the outgoing response text, delivery status and message or reply receipts. It does not store your comment text, username or display name. We do not receive your Facebook or Instagram password.</p>
+    <p>Meta provides account, comment and post identifiers, timestamps, and information needed to check that a comment belongs to one of our videos. Its notifications may also include your username, display name, comment text or the text of a message you send us. We briefly check comment text against the CTA in the video caption. We check incoming messages for opt-out requests; other inbox conversations receive no automated reply.</p>
+    <p>Our automation database stores the identifiers needed to process the comment, the outgoing response text, delivery status and message or reply receipts. It also stores a keyed, one-way identifier to prevent repeated invites and respect opt-outs. It does not store your comment text, username or display name. We do not receive your Facebook or Instagram password.</p>
 
     <h2>Why we use it</h2>
     <p>We use this information to send the group invite, acknowledge the message in a comment reply, prevent duplicate sends and investigate delivery failures. This flow uses a fixed response; it does not send your comments to an AI model. We do not sell the information collected by this automation.</p>
@@ -34,11 +35,12 @@
     <p>If you follow the invite and join the group, your use of Discord is covered by <a href="https://discord.com/privacy">Discord's privacy policy</a>. Joining the group is separate from this comment-reply automation.</p>
 
     <h2>How long we keep records</h2>
-    <p>Automation records are scheduled for deletion 30 days after we receive the event. Cleanup runs at startup and hourly while the service is running. If the service is offline, overdue records are removed when it next starts. These limits apply to our automation database, not to records held by Meta, Cloudflare, GitHub or Discord.</p>
+    <p>Operational event and delivery records are scheduled for deletion 30 days after we receive the event. QA and diagnostic copies expire after 30 days too. Cleanup runs at startup and hourly while the service is running. If the service is offline, overdue records are removed when it next starts. We retain the minimal keyed opt-out identifier while the automation operates, unless you ask us to resume. This keeps a later comment from restarting invites you stopped. Our retention limits do not control records held independently by Meta, Cloudflare, GitHub or Discord.</p>
     <p>Pending records in our Cloudflare queue are deleted after transfer to our computer or when they reach 30 days. Queue expiry runs hourly. These limits cover the queue we operate, not technical records retained independently by Cloudflare.</p>
 
-    <h2>Questions and deletion requests</h2>
-    <p>Send a private message to the account you commented on: <a href="https://www.instagram.com/pokefindhq/">@pokefindhq</a> or <a href="https://www.instagram.com/aislesnags/">@aislesnags on Instagram</a>. For deletion, include “Data deletion request” and a link to the relevant comment, or enough information to identify the account and comment. See <a href="delete-data.html">how to request deletion</a> for details.</p>
+    <h2>Stop invites, ask a question or request deletion</h2>
+    <p>Reply STOP to an invite, or message the account to ask us to stop. We suppress further automatic invites. If Meta's message-sender identifier cannot be linked to a commenter, we hold the account's sends until the owner verifies the identity. A new keyword comment alone does not cancel an opt-out; ask the owner to resume first.</p>
+    <p>Contact the account you commented on: <a href="https://www.instagram.com/pokefindhq/">PokeFindHQ on Instagram</a>, <a href="https://www.facebook.com/1174543442402606/">PokeFindHQ on Facebook</a>, <a href="https://www.instagram.com/aislesnags/">Aisle Snags on Instagram</a> or <a href="https://www.facebook.com/1266187879917324/">Aisle Snags on Facebook</a>. For deletion, include "Data deletion request" and a link to the relevant comment, or enough information to identify the account and comment. The owner handles inbox questions, invite requests and deletion requests manually. See <a href="delete-data.html">how to request deletion</a> for details.</p>
 
     <h2>Changes to this policy</h2>
     <p>We will update this page if the automation's data practices change. The date above identifies the latest version.</p>
