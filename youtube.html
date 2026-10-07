@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="How OpenClaw YouTube Replies works for PokeFindHQ and Aisle Snags, what it stores, and how to stop replies or delete data.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>OpenClaw YouTube Replies | Privacy and terms</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <a class="brand" href="youtube.html">OpenClaw YouTube Replies</a>
+    <nav aria-label="Page sections"><a href="#privacy">Privacy</a><a href="#delete">Delete data</a><a href="#terms">Terms</a></nav>
+  </header>
+  <main id="main">
+    <h1>YouTube keyword replies</h1>
+    <p class="date">PokeFindHQ and Aisle Snags · Updated October 6, 2026</p>
+    <p>OpenClaw YouTube Replies is a private tool for the owners and authorized operators of <a href="https://www.youtube.com/@PokeFindHQ">PokeFindHQ</a> and <a href="https://www.youtube.com/@AisleSnags">Aisle Snags</a>. It uses YouTube API Services to check comments on their videos and reply when a viewer comments the keyword requested in that video's title or description. Some Aisle Snags videos request a ZIP code instead.</p>
+    <p>Replies give the requested group information publicly. They do not send a private message or claim that one was sent. PokeFindHQ replies link to its Pokémon Restock Group; Aisle Snags replies link to Dealify. Joining either group is optional. Following, liking and sharing are not required. YouTube Shorts comment links are not clickable, so viewers may need to copy the address into a browser.</p>
+
+    <section aria-labelledby="privacy">
+      <h2 id="privacy">Privacy policy</h2>
+      <h3>Information we access and store</h3>
+      <p>Google authorization lets the tool read the connected channel's identity, video titles and descriptions, comment and reply identifiers, comment text, commenter channel identifiers and timestamps. It checks this information to match the requested keyword, verify video ownership, find an existing brand reply and prevent duplicate replies. It does not request Google passwords, read private messages or retrieve YouTube Analytics.</p>
+      <p>Each brand has a separate local database. It stores comment, video and channel identifiers, the outgoing reply text, delivery status, reply receipts and timestamps. A keyed, one-way commenter identifier supports a cooldown and opt-outs. Audit files retain routing identifiers and whether a brand reply exists. The database and audit files do not retain original comment text, usernames, display names or raw commenter channel identifiers. Comment text is checked temporarily while processing a request.</p>
+      <p>Google refresh tokens are stored in the owner's macOS Keychain, separately for each connected channel. These tokens permit the tool to act within the approved Google scope; they are not Google passwords.</p>
+      <h3>Use and sharing</h3>
+      <p>The tool runs on the owner's computer. Google and YouTube process its API requests and publish outgoing replies under the connected channel. Operational health alerts go to the owner's Discord control channel. The reply uses fixed, owner-approved wording; the tool does not send comments to an AI model. We do not sell information collected by this tool or use it for advertising.</p>
+      <p>This policy page is hosted by GitHub Pages. It adds no cookies, analytics scripts, advertising trackers or contact forms. Google, YouTube and GitHub may process technical information under their own policies. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. If you join a linked group, your use of Discord is covered by <a href="https://discord.com/privacy">Discord's privacy policy</a>; group membership is separate from this tool.</p>
+      <h3>Retention</h3>
+      <p>Local operational records, observations and audit files are scheduled for deletion after 30 days. Cleanup runs at startup and hourly while the worker is running; overdue records are removed when an offline worker next starts. Minimal keyed opt-out preferences remain while the channel is connected. These limits do not control records held independently by Google, YouTube, GitHub or Discord.</p>
+    </section>
+
+    <section aria-labelledby="delete">
+      <h2 id="delete">Stop replies or request deletion</h2>
+      <p>Comment STOP on a video from the relevant channel, or contact the owner to request an opt-out. A verified STOP received after activation suppresses later automated replies from that channel. The tool does not treat a new keyword comment as permission to cancel an opt-out.</p>
+      <p>For privacy questions, complaints, opt-outs or deletion requests, message <a href="https://www.instagram.com/pokefindhq/">PokeFindHQ on Instagram</a> or <a href="https://www.instagram.com/aislesnags/">Aisle Snags on Instagram</a>. Include "YouTube data deletion request", your YouTube channel link and a link to the relevant comment. The owner may ask you to confirm the request from the YouTube account that posted it.</p>
+      <p>The owner handles requests manually and removes identified local records as soon as possible and within seven calendar days of a verified deletion request. Audit-only comments require an additional identity review because audit files do not store commenter identities. Deletion ordinarily keeps only the minimal keyed opt-out preference to prevent further replies. It does not delete comments or replies on YouTube, your Discord account or group membership. Manage those directly through the relevant platform.</p>
+      <h3>Channel-owner authorization controls</h3>
+      <p>The channel owner can pause the worker at any time. To disconnect it, ask the authorized operator to run the documented owner disconnect control. That control pauses the channel, programmatically revokes its Google authorization, then removes the channel's local API records, audits, opt-outs and stored channel token. If Google revocation cannot be confirmed, it reports the failure and leaves the channel paused for the operator to resolve.</p>
+      <p>You can also revoke access to "OpenClaw YouTube Replies" through <a href="https://security.google.com/settings/security/permissions">Google's security settings</a>. While the worker is online, it checks authorization at startup and at least hourly, even when replies are paused. If Google confirms that its refresh authorization is no longer valid, it pauses the channel and removes its local authorized data and token. An offline computer cannot perform this check until it runs again.</p>
+    </section>
+
+    <section aria-labelledby="terms">
+      <h2 id="terms">Terms of use</h2>
+      <p>Access to this private tool is limited to the channel owners and their authorized operators. Before enabling replies, the operator must accept this privacy policy and these terms. By using this API client, you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.</p>
+      <p>The operator authorizes public replies only on the connected, verified channel. Each video must contain a clear comment instruction. The tool starts with a one-reply pilot and checks the public receipt before a wider rollout. Historical comments are not automatically backfilled. A denied or uncertain send pauses the channel for review; the tool does not retry an uncertain public reply automatically.</p>
+      <p>Google quotas, moderation, network failures and computer downtime can delay or prevent replies. A group invite does not promise product availability or a successful purchase. The owner will update this page when the tool's data practices or terms change.</p>
+    </section>
+  </main>
+  <footer><p>OpenClaw YouTube Replies · PokeFindHQ and Aisle Snags</p></footer>
+</body>
+</html>
